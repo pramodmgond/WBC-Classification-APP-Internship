@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>WBC Image Classifier</title>
+        <style>
+            body {
+                background-color: lightgray;
+            }
+
+            form {
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px gray;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+         
+            button {
+                margin-top: 0.6cm;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 class="text-center" style="text-align: center;">WBC Image Classifier</h1>
+
+        <div style="text-align: center;">
+            <form class="p-3" action="/" method="post" enctype="multipart/form-data" style="background-color: lightblue;">
+                <div class="form-group">
+                    <label for="imagefile">Select an image file   : :</label>
+                    <input class="form-control-file" type="file" name="imagefile" id="imagefile">
+                </div>
+                <button class="btn btn-primary" type="submit" name="predict" style="background-color: lightyellow;">Predict image</button>
+            </form>
+            
+            {% if request.method == 'POST' and not prediction %}
+                <div class="alert alert-danger mt-3">
+                    Please select an image file before clicking the predict button.
+                </div>
+            {% endif %}
+            
+            {% if prediction %}
+                <div style="height: 0.7cm;"></div>
+                <p class="text-center" style="margin-top: 30px; color: blue;">Image is a {{ prediction }} - {{ (y_predict) }}</p>
+            {% endif %}
+        
+        </div>
+    </body>
+</html>
