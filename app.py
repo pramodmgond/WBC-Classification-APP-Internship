@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 app = Flask(__name__) #creates a new Flask app instance.
 
 #loads a pre-trained Keras model 
-model = tf.keras.models.load_model('cnn_27.h5') 
+model = tf.keras.models.load_model('cnn_27.h5')  # load model
 
 #@app.route('/', methods=['GET'])
 #def hello_world():
