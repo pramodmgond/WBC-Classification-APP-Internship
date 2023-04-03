@@ -12,7 +12,7 @@ import numpy as np
 
 import keras.utils as image
 
-models = keras.models.load_model("cnn_27.h5")
+models = keras.models.load_model("cnn_27.h5") # load model
 
 #page configuration of the Streamlit app
 #specifies the title of the web page
